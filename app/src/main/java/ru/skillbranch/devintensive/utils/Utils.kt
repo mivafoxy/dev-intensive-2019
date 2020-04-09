@@ -29,6 +29,9 @@ object Utils
         if (hasFirstName && !hasLastName)
             return "${firstName!![0].toUpperCase()}"
 
+        if (!hasFirstName && hasLastName)
+            return "${lastName!![0].toUpperCase()}"
+
         return "${firstName!![0].toUpperCase()}${lastName!![0].toUpperCase()}"
     }
 
