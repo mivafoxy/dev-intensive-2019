@@ -21,7 +21,8 @@ abstract class BaseMessage(
             chat: Chat,
             date: Date = Date(),
             type: String = "text",
-            payload: Any?
+            payload: Any?,
+            isIncoming: Boolean = false
         ): BaseMessage
         {
             lastId++
@@ -32,14 +33,16 @@ abstract class BaseMessage(
                     from,
                     chat,
                     date = date,
-                    image = payload as String
+                    image = payload as String,
+                    isIncoming = isIncoming
                 )
                 else    -> ImageMessage(
                     "$lastId",
                     from,
                     chat,
                     date = date,
-                    image = payload as String
+                    image = payload as String,
+                    isIncoming = isIncoming
                 )
             }
         }
