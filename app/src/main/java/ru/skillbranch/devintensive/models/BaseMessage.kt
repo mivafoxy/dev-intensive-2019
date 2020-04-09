@@ -4,8 +4,8 @@ import java.util.*
 
 abstract class BaseMessage(
     val id: String,
-    val from: User?,
     val chat: Chat,
+    val from: User?,
     val isIncoming: Boolean = false,
     val date: Date = Date()
 )
@@ -15,7 +15,6 @@ abstract class BaseMessage(
     companion object AbstractFactory
     {
         var lastId = -1
-
         fun makeMessage(
             from: User?,
             chat: Chat,
@@ -30,18 +29,18 @@ abstract class BaseMessage(
             {
                 "image" -> ImageMessage(
                     "$lastId",
-                    from,
-                    chat,
+                    from = from,
+                    chat = chat,
                     date = date,
                     image = payload as String,
                     isIncoming = isIncoming
                 )
-                else    -> ImageMessage(
+                else    -> TextMessage(
                     "$lastId",
-                    from,
-                    chat,
+                    from = from,
+                    chat = chat,
                     date = date,
-                    image = payload as String,
+                    text = payload as String,
                     isIncoming = isIncoming
                 )
             }
