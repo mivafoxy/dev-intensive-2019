@@ -148,7 +148,7 @@ class Bender(var status: Status = Status.NORMAL, var question: Question = Questi
                 return null
             }
         },
-        IDLE("На этом всё, вопросов больше нет", listOf(), null)
+        IDLE("На этом все, вопросов больше нет", listOf(), null)
         {
             override fun nextQuestion(): Question = IDLE
             override fun ensureAnswer(answer: String): String?
