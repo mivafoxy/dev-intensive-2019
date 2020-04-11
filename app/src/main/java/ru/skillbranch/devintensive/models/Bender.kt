@@ -49,11 +49,11 @@ class Bender(var status: Status = Status.NORMAL, var question: Question = Questi
                 question = Question.NAME
                 status = Status.NORMAL
                 retries = 0
-                "Это неправильный ответ\nДавай все по новой\n${question.question}" to status.color
+                "Это неправильный ответ. Давай все по новой\n${question.question}" to status.color
             }
             else
             {
-                "Это неправильный ответ\n${question.question}" to status.color
+                "Это неправильный ответ.\n${question.question}" to status.color
             }
         }
 
