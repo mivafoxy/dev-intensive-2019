@@ -50,7 +50,5 @@ class ProfileViewModel : ViewModel()
         }
 
         repository.saveAppTheme(appTheme.value!!)
-
-        TODO("Not yet implemented")
     }
 }
